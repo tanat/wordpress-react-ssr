@@ -34,5 +34,7 @@ wordpress:
     - '8081:80'
   links:
     - 'mysql'
+  volumes:
+    - ./wordpress/plugins:/var/www/html/wp-content/plugins:ro
   environment:
     - WORDPRESS_DB_PASSWORD=password
