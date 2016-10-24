@@ -10,7 +10,6 @@ RUN chown -R app:app $HOME/*
 USER app
 WORKDIR $HOME/nodeapp
 RUN npm install
-RUN npm run build
 
 USER root
 COPY . $HOME/nodeapp
