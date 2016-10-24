@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Keita Moromizato <keita.moromi@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.75.0"
+  }
 }
