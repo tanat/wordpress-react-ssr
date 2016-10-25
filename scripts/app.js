@@ -8,7 +8,7 @@ app.get('/:permalink', (req, res) => {
 
   const permalink = req.params.permalink;
 
-  request(`http://wordpress:8081/wp-json/wp/v2/posts/${permalink}`, (error, response, body) => {
+  request(`http://wordpress:80/wp-json/wp/v2/posts/${permalink}`, (error, response, body) => {
     console.log(error, body);
 
     if (error) {
