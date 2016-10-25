@@ -1,7 +1,11 @@
 const request = require('request');
 const express = require('express');
+const handlebars = require('handlebars');
+const fs = require('fs');
 
 const app = express();
+
+const template = handlebars.compile(fs.readFileSync('./template.html', 'utf-8'));
 
 app.get('/:permalink', (req, res) => {
   console.log(req.params);
@@ -15,7 +19,9 @@ app.get('/:permalink', (req, res) => {
       return res.sendStatus(500);
     }
 
-    res.send(body);
+    res.send(template({
+      body: `<h1>hoge</h1>`
+    }));
   });
 });
 
