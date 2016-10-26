@@ -26,7 +26,7 @@ app.get('/:permalink', (req, res) => {
     }
 
     res.send(template({
-      body: renderToString(React.createElement(ArticlePage, {}))
+      body: renderToString(React.createElement(ArticlePage, JSON.parse(body)))
     }));
   });
 });
