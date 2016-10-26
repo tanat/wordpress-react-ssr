@@ -1,7 +1,13 @@
+require('babel-register');
+
 const request = require('request');
 const express = require('express');
 const handlebars = require('handlebars');
 const fs = require('fs');
+const React = require('react');
+const renderToString = require('react-dom/server').renderToString;
+
+const ArticlePage = require('./react/article').default;
 
 const app = express();
 
@@ -20,7 +26,7 @@ app.get('/:permalink', (req, res) => {
     }
 
     res.send(template({
-      body: `<h1>hoge</h1>`
+      body: renderToString(React.createElement(ArticlePage, {}))
     }));
   });
 });
