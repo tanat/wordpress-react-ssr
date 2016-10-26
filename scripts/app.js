@@ -14,19 +14,16 @@ const app = express();
 const template = handlebars.compile(fs.readFileSync('./template.html', 'utf-8'));
 
 app.get('/:permalink', (req, res) => {
-  console.log(req.params);
-
   const permalink = req.params.permalink;
 
   request(`http://wordpress:80/wp-json/wp/v2/posts/${permalink}`, (error, response, body) => {
-    console.log(error, body);
-
     if (error) {
       return res.sendStatus(500);
     }
 
     res.send(template({
-      body: renderToString(React.createElement(ArticlePage, JSON.parse(body)))
+      body: renderToString(React.createElement(ArticlePage, JSON.parse(body))),
+      initialData: body
     }));
   });
 });
