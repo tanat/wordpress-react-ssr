@@ -1,6 +1,9 @@
 # TODO 
-* webpack設定
-* nginx設定
+* Webpack watch
 * 最小限のCSS？
+* Lint
+
+## Issue
+* volumeが更新されない？
 
 http://ja.wp-api.org/reference/types/

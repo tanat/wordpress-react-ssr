@@ -9,11 +9,9 @@ const Article = article => (
    </a>
 );
 
-export default (props) => {
-  console.log("top", props);
-  return (
+export default (props) => (
   <div>
     <h1>TOP</h1>
     {props.articles.map(a => <Article key={a.id} {...a} />)}
   </div>
-)};
+);
