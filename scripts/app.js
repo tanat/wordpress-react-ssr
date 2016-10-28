@@ -14,8 +14,7 @@ const app = express();
 
 const template = handlebars.compile(fs.readFileSync('./template.html', 'utf-8'));
 
-// TODO environment
-const WP_BASE_URL = 'http://wordpress:80/wp-json/wp/v2';
+const WP_BASE_URL = `${process.env.WP_URL}/wp-json/wp/v2`;
 
 app.get('/', (req, res) => {
   request(`${WP_BASE_URL}/posts`, (error, response, body) => {

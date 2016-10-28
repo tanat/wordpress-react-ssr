@@ -6,6 +6,7 @@ front-app:
     - '3000:3000'
   environment:
     - PORT=3000
+    - WP_URL=http://wordpress:80
   volumes:
     - ./scripts:/home/app/nodeapp
     - /home/app/nodeapp/node_modules
