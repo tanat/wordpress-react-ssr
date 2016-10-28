@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const Article = article => (
-  <a key={article.id} href={`/${article.id}`}>
+  <a href={`/${article.id}`}>
     <li>
       <h2>{article.title.rendered}</h2>
       <p>{article.date}</p>
@@ -9,9 +9,11 @@ const Article = article => (
    </a>
 );
 
-export default (props) => (
+export default (props) => {
+  console.log("top", props);
+  return (
   <div>
     <h1>TOP</h1>
-    {props.articles.map(a => <Article {...a} />)}
+    {props.articles.map(a => <Article key={a.id} {...a} />)}
   </div>
-);
+)};

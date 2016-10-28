@@ -5,15 +5,18 @@ RUN useradd --user-group --create-home --shell /bin/false app
 ENV HOME=/home/app
 
 COPY package.json webpack.config.js $HOME/nodeapp/
+COPY scripts $HOME/nodeapp/scripts
+
 RUN chown -R app:app $HOME/*
 
 USER app
 WORKDIR $HOME/nodeapp
 RUN npm install
+RUN npm run build
 
 USER root
-COPY . $HOME/nodeapp
 RUN chown -R app:app $HOME/*
 USER app
 
+# webpack --watchにしたらいい？
 CMD ["node", "app.js"]

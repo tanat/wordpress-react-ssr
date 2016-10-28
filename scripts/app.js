@@ -22,9 +22,11 @@ app.get('/', (req, res) => {
       return res.sendStatus(500);
     }
 
+    const data = { articles: JSON.parse(body) };
+
     res.send(template({
-      body: renderToString(React.createElement(TopPage, {articles: JSON.parse(body)})),
-      initialData: body
+      body: renderToString(React.createElement(TopPage, data)),
+      initialData: JSON.stringify(data)
     }));
   });
 });
