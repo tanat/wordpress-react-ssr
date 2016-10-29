@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Article = article => (
   <a href={`/${article.id}`}>
@@ -6,10 +6,10 @@ const Article = article => (
       <h2>{article.title.rendered}</h2>
       <p>{article.date}</p>
     </li>
-   </a>
+  </a>
 );
 
-export default (props) => (
+export default props => (
   <div>
     <h1>TOP</h1>
     {props.articles.map(a => <Article key={a.id} {...a} />)}

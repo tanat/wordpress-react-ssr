@@ -11,15 +11,16 @@ const initialData = JSON.parse(
 const routes = [
   {
     path: /\/[0-9]+/,
-    component: ArticlePage
+    component: ArticlePage,
   },
   {
     path: /\//,
-    component: TopPage
+    component: TopPage,
   },
 ];
 
 const path = window.location.pathname;
-const Component = routes.reduce((memo, route) => memo || (path.match(route.path) ? route.component : null), null);
+const Component = routes.reduce((memo, route) =>
+  memo || (path.match(route.path) ? route.component : null), null);
 
 render(<Component {...initialData} />, document.getElementById('app'));
