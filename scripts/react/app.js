@@ -22,6 +22,4 @@ const routes = [
 const path = window.location.pathname;
 const Component = routes.reduce((memo, route) => memo || (path.match(route.path) ? route.component : null), null);
 
-console.log("component", Component);
-
 render(<Component {...initialData} />, document.getElementById('app'));

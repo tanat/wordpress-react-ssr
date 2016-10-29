@@ -1,7 +1,7 @@
 front-app:
   build: .
   container_name: "front-app"
-  command: node app.js
+  command: npm start
   ports:
     - '3000:3000'
   environment:

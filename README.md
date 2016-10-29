@@ -1,6 +1,7 @@
-# TODO 
-* Webpack watch
-* 最小限のCSS？
+# TODO
+* node_modules問題があるのでpackage.json/webpackはルートに移動したい
+* MaterialUI
+* debug/prod
 * Lint
 
 ## Issue
