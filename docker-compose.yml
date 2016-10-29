@@ -8,7 +8,7 @@ front-app:
     - PORT=3000
     - WP_URL=http://wordpress:80
   volumes:
-    - ./scripts:/home/app/nodeapp
+    - ./scripts:/home/app/nodeapp/scripts
     - /home/app/nodeapp/node_modules
     - www:/home/app/nodeapp/out
   links:

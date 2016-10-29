@@ -4,7 +4,8 @@ RUN useradd --user-group --create-home --shell /bin/false app
 
 ENV HOME=/home/app
 
-COPY scripts $HOME/nodeapp
+COPY package.json webpack.config.js $HOME/nodeapp/
+COPY scripts $HOME/nodeapp/scripts
 
 RUN chown -R app:app $HOME/*
 

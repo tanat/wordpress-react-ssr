@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    js: './react/app.js',
+    js: './scripts/react/app.js',
   },
   output: {
     path: `${__dirname}/out`,

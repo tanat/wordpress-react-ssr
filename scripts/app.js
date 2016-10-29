@@ -12,7 +12,7 @@ const TopPage = require('./react/top').default;
 
 const app = express();
 
-const template = handlebars.compile(fs.readFileSync('./template.html', 'utf-8'));
+const template = handlebars.compile(fs.readFileSync(`${__dirname}/template.html`, 'utf-8'));
 
 const WP_BASE_URL = `${process.env.WP_URL}/wp-json/wp/v2`;
 
