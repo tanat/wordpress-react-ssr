@@ -11,12 +11,10 @@ RUN chown -R app:app $HOME/*
 
 USER app
 WORKDIR $HOME/nodeapp
-RUN npm install
-RUN npm run build
+RUN rm -rf node_modules && npm cache clean && npm install && npm run build
 
 USER root
 RUN chown -R app:app $HOME/*
 USER app
 
-# webpack --watchにしたらいい？
-CMD ["node", "app.js"]
+CMD ["npm", "start"]
