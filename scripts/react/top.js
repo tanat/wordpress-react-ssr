@@ -1,5 +1,4 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
 
 const Article = article => (
   <a href={`/${article.id}`}>

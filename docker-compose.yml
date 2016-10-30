@@ -1,6 +1,7 @@
 front-app:
   build: .
   container_name: "front-app"
+  restart: always
   ports:
     - '3000:3000'
   environment:
