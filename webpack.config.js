@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    js: './scripts/react/app.js',
+    js: './scripts/react/app.js'
   },
   output: {
     path: `${__dirname}/out`,
@@ -15,6 +15,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react'],
         },
+      },
+      {
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader',
       },
     ],
   },

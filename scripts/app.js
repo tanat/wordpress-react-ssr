@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
     res.send(template({
       body: renderToString(React.createElement(TopPage, data)),
-      initialData: JSON.stringify(data)
+      initialData: JSON.stringify(data),
     }));
   });
 });
@@ -41,7 +41,7 @@ app.get('/[0-9]+', (req, res) => {
 
     res.send(template({
       body: renderToString(React.createElement(ArticlePage, JSON.parse(body))),
-      initialData: body
+      initialData: body,
     }));
   });
 });

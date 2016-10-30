@@ -4,6 +4,8 @@ import { render } from 'react-dom';
 import ArticlePage from './article';
 import TopPage from './top';
 
+import '../styles/index.styl';
+
 const initialData = JSON.parse(
   document.getElementById('initial-data').getAttribute('data-json')
 ) || {};
