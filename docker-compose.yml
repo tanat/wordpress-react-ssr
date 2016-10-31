@@ -1,41 +1,46 @@
-front-app:
-  build: .
-  container_name: "front-app"
-  restart: always
-  ports:
-    - '3000:3000'
-  environment:
-    - PORT=3000
-    - WP_URL=http://wordpress:80
-  volumes:
-    - ./scripts:/home/app/nodeapp/scripts
-    - node_modules:/home/app/nodeapp/node_modules
-    - www:/home/app/nodeapp/out
-  links:
-    - 'wordpress'
-nginx-proxy:
-  image: nginx
-  container_name: "nginx"
-  ports:
-    - '8080:8080'
-  volumes:
-    - ./nginx:/etc/nginx/conf.d:ro
-    - www:/www/app:ro
-  links:
-    - 'front-app'
-mysql:
-  image: mysql
-  container_name: 'mysql'
-  environment:
-    - MYSQL_ROOT_PASSWORD=password
-wordpress:
-  image: wordpress
-  container_name: wordpress
-  ports:
-    - '8081:80'
-  links:
-    - 'mysql'
-  volumes:
-    - ./wordpress/plugins:/var/www/html/wp-content/plugins:ro
-  environment:
-    - WORDPRESS_DB_PASSWORD=password
+version: '2'
+services:
+  front-app:
+    build: .
+    container_name: "front-app"
+    restart: always
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - WP_URL=http://wordpress:80
+    volumes:
+      - ./scripts:/home/app/nodeapp/scripts
+      - node_modules:/home/app/nodeapp/node_modules
+      - www:/home/app/nodeapp/out
+    links:
+      - 'wordpress'
+  nginx-proxy:
+    image: nginx
+    container_name: "nginx"
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./nginx:/etc/nginx/conf.d:ro
+      - www:/www/app:ro
+    links:
+      - 'front-app'
+  mysql:
+    image: mysql
+    container_name: 'mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    ports:
+      - '8081:80'
+    links:
+      - 'mysql'
+    volumes:
+      - ./wordpress/plugins:/var/www/html/wp-content/plugins:ro
+    environment:
+      - WORDPRESS_DB_PASSWORD=password
+volumes:
+  www:
+  node_modules:
