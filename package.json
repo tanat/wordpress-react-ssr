@@ -28,10 +28,10 @@
     "moment": "^2.15.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "request": "^2.75.0",
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.3.1",
+    "superagent": "^2.3.0",
     "webpack": "^1.13.3"
   },
   "devDependencies": {
