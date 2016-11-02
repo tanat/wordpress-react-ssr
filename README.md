@@ -1,26 +1,15 @@
-# TODO
-* Likeボタン
-* debug/prod
-* rm -rf入れてみたけど意味無さそう。そうではなく、volumeが保存される仕組みのとこ？
+# WordPress REST API + React ServerSide Rendering
+WP REST APIでAPIサーバー化したWordPressのデータを、React ServerSide Renderingで表示するサンプルです。これらの構成をDocker Composeで実現しています。
 
-## Issue
-* volumeが更新されない？
+## Architecture
 
-http://ja.wp-api.org/reference/types/
+![Architecture](./images/1.png)
 
-foreverでnodeプロセスを永続化するより、dockerコンテナを永続化（restart）するほうが筋が良さそう
-http://nobuhito.github.io/dev/2014/06/02/docker_node_forever/
-
-## 今回の構成
-図
-
-## まずは言葉の整理
-### Wordpress
-みんなだいすきWordpress
-欠点はセキュリティと、プラグインの反乱
-
-### React（Server Side Rendering）
-Viewの統一
-
-### Docker（Docker Compose）
-インフラのコード化
+## Stack
+* Docker
+* Docker Compose
+* React.js
+* node.js
+* WebPack
+* WordPress(with WP REST API)
+* MySQL

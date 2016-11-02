@@ -58,7 +58,6 @@ app.get('/[0-9]+', (req, res) => {
 /* APIs */
 app.post('/api/[0-9]+/favorite', (req, res) => {
   const id = +req.url.match(/\/([0-9]+)/)[1];
-  console.log(`POST /favorite ${id}`);
 
   favorites.push(id);
   res.send(200);
@@ -66,7 +65,6 @@ app.post('/api/[0-9]+/favorite', (req, res) => {
 
 app.delete('/api/[0-9]+/favorite', (req, res) => {
   const id = +req.url.match(/\/([0-9]+)/)[1];
-  console.log(`DELETE /favorite ${id}`);
 
   favorites = favorites.filter(f => f !== id);
   res.send(200);
